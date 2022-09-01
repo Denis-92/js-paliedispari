@@ -6,15 +6,14 @@ Creare una funzione per capire se la parola inserita è palindroma
 
 console.log('JS - OK!');
 
-/* ESERCIZIO 1 -----------------------------
-
+// ESERCIZIO 1 ----------------------------- TOGLIERE/METTERE COMMENTO da riga 10 a riga 16 per attivare/disattivare il PRIMO esercizio!
+/*
 let inputUtente = prompt('inserisci parola, per verificare se è palindroma'); console.log('inputUtente', inputUtente);
 
 inputUtente = controllarePalindromo(inputUtente);
 
 console.log('Risposta: ', inputUtente);
-
----------------------------------- */
+*/
 
 /*
 Pari e Dispari
@@ -28,6 +27,8 @@ Consigli del giorno
 2. Scriviamo sempre solo un pezzetto di codice alla volta, se funziona allora andiamo avanti.
 */
 
+// ESERCIZIO 2 ----------------------------- TOGLIERE/METTERE COMMENTO da riga 31 a riga 41 per attivare/disattivare il SECONDO esercizio!
+/**/
 const inputPariDispari = prompt('scegli PARI o DISPARI').toLowerCase();
 
 const inputNumero = parseInt(prompt('inserisci numero da 1 a 5')); console.log('Hai scelto:', inputPariDispari, ' e ', inputNumero);
@@ -37,8 +38,7 @@ const sommaInputRandom = sommaRandom(inputNumero);
 const risultato = controlloPariDispari(sommaInputRandom, inputPariDispari);
 
 console.log(risultato);
-
-
+/**/
 
 /* ---------- FUNZIONI ---------- */
 
@@ -94,15 +94,17 @@ function sommaRandom(importNumero) {
 function controlloPariDispari(importNumeroSommato, importScelta) {
     let verificaPari = '';
     if (sommaInputRandom % 2 === 0) {
-        console.log('è pari');
+        //console.log('è pari');
         verificaPari = 'Il risultato è pari... ';
         if (importScelta === 'pari') { verificaPari += 'Hai vinto!'; }
         else { verificaPari += 'Non hai vinto, ritenta sarai più fortunato!'; }
     } else {
-        console.log('è DISpari');
+        //console.log('è DISpari');
         verificaPari = 'Il risultato è DISpari... ';
         if (importScelta === 'dispari') { verificaPari += 'Hai vinto!'; }
         else { verificaPari += 'Non hai vinto, ritenta sarai più fortunato!'; }
     }
     return verificaPari;
 }
+
+// FUNZIONE ESERCIZIO 2 - PARI O DISPARI - //FINITO
