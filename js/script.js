@@ -17,34 +17,49 @@ Consigli del giorno
 console.log('JS - OK!');
 
 
-const parolaInput = prompt('inserisci parola, per verificare se è palindroma'); console.log('parolaInput', parolaInput);
+let inputUtente = prompt('inserisci parola, per verificare se è palindroma'); console.log('inputUtente', inputUtente);
 
-const mezzaLunghezzaParola = Math.floor(parolaInput.length / 2); console.log('mezzaLunghezzaParola', mezzaLunghezzaParola);
+inputUtente = controllarePalindromo(inputUtente);
 
-let reverseIndex = parolaInput.length - 1; console.log('reverseIndex', reverseIndex);
+console.log('Risposta: ', inputUtente);
 
-let palindromaFlag = true;
 
-for (let i = 0; i < mezzaLunghezzaParola; i++) {
 
-    console.log('ciclo for - indice', i);
-    console.log('ciclo for - reverse', reverseIndex);
 
-    if (parolaInput[i] === parolaInput[reverseIndex]) {
-        console.log('lettera uguale', i);
+/* ---------- FUNZIONI ---------- */
+
+function controllarePalindromo(parolaInput) {
+
+    const mezzaLunghezzaParola = Math.floor(parolaInput.length / 2); console.log('mezzaLunghezzaParola', mezzaLunghezzaParola);
+
+    let reverseIndex = parolaInput.length - 1; //console.log('reverseIndex', reverseIndex);
+
+    let palindromaFlag = true;
+
+    for (let i = 0; i < mezzaLunghezzaParola; i++) {
+
+        //console.log('ciclo for - indice', i);
+        //console.log('ciclo for - reverse', reverseIndex);
+
+        if (parolaInput[i] === parolaInput[reverseIndex]) {
+            //console.log('lettera uguale', i);
+        } else {
+            //console.log('lettera diversa', i);
+            palindromaFlag = false;
+        }
+
+        reverseIndex--;
+
+    }
+    //console.log('ciclo for finito');
+
+    if (palindromaFlag) {
+        //console.log('La parola è palindroma!')
+        palindromaFlag = 'La parola è palindroma'
     } else {
-        console.log('lettera diversa', i);
-        palindromaFlag = false;
+        //console.log('La parola NON è palindroma!')
+        palindromaFlag = 'La parola NON è palindroma'
     }
 
-    reverseIndex--;
-
+    return palindromaFlag;
 }
-console.log('ciclo for finito');
-
-
-/*
-function palindromo(parolaInput) {
-    return true;
-}
-*/
