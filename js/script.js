@@ -30,18 +30,11 @@ Consigli del giorno
 
 const inputPariDispari = prompt('scegli PARI o DISPARI').toLowerCase();
 
-const inputNumero = parseInt(prompt('inserisci numero da 1 a 5')); console.log('Hai scelto: ', inputPariDispari, ' e ', inputNumero);
+const inputNumero = parseInt(prompt('inserisci numero da 1 a 5')); console.log('Hai scelto:', inputPariDispari, ' e ', inputNumero);
 
+const sommaInputRandom = sommaRandom(inputNumero);
 
-const numeroRandom = Math.floor(Math.random() * 5 + 1); console.log('numero random: ', numeroRandom);
-
-const sommaInputRandom = inputNumero + numeroRandom;
-
-if (sommaInputRandom % 2 === 0) {
-    console.log('è pari');
-} else {
-    console.log('è DISpari');
-}
+const risultato = controlloPariDispari(sommaInputRandom, inputPariDispari);
 
 
 
@@ -89,3 +82,25 @@ function controllarePalindromo(parolaInput) {
 
 
 // FUNZIONE ESERCIZIO 2 - PARI O DISPARI
+
+function sommaRandom(importNumero) {
+    const numeroRandom = Math.floor(Math.random() * 5 + 1); console.log('numero random: ', numeroRandom);
+    const sommaImportRandom = importNumero + numeroRandom;
+    return sommaImportRandom;
+}
+
+function controlloPariDispari(importNumeroSommato, importScelta) {
+    let verificaPari = '';
+    if (sommaInputRandom % 2 === 0) {
+        console.log('è pari');
+        verificaPari = 'Il risultato è pari';
+        if (importScelta === 'pari') { verificaPari += 'Hai vinto!'; }
+        else { verificaPari += 'Non hai vinto... ritenta sarai più fortunato!'; }
+    } else {
+        console.log('è DISpari');
+        verificaPari = 'Il risultato è DISpari';
+        if (importScelta === 'dispari') { verificaPari += 'Hai vinto!'; }
+        else { verificaPari += 'Non hai vinto... ritenta sarai più fortunato!'; }
+    }
+    return verificaPari;
+}
