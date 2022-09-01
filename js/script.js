@@ -36,6 +36,8 @@ const sommaInputRandom = sommaRandom(inputNumero);
 
 const risultato = controlloPariDispari(sommaInputRandom, inputPariDispari);
 
+console.log(risultato);
+
 
 
 /* ---------- FUNZIONI ---------- */
@@ -93,14 +95,14 @@ function controlloPariDispari(importNumeroSommato, importScelta) {
     let verificaPari = '';
     if (sommaInputRandom % 2 === 0) {
         console.log('è pari');
-        verificaPari = 'Il risultato è pari';
+        verificaPari = 'Il risultato è pari... ';
         if (importScelta === 'pari') { verificaPari += 'Hai vinto!'; }
-        else { verificaPari += 'Non hai vinto... ritenta sarai più fortunato!'; }
+        else { verificaPari += 'Non hai vinto, ritenta sarai più fortunato!'; }
     } else {
         console.log('è DISpari');
-        verificaPari = 'Il risultato è DISpari';
+        verificaPari = 'Il risultato è DISpari... ';
         if (importScelta === 'dispari') { verificaPari += 'Hai vinto!'; }
-        else { verificaPari += 'Non hai vinto... ritenta sarai più fortunato!'; }
+        else { verificaPari += 'Non hai vinto, ritenta sarai più fortunato!'; }
     }
     return verificaPari;
 }
