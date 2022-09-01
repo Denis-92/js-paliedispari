@@ -2,7 +2,21 @@
 Palindroma
 Chiedere all’utente di inserire una parola
 Creare una funzione per capire se la parola inserita è palindroma
+*/
 
+console.log('JS - OK!');
+
+/* ESERCIZIO 1 -----------------------------
+
+let inputUtente = prompt('inserisci parola, per verificare se è palindroma'); console.log('inputUtente', inputUtente);
+
+inputUtente = controllarePalindromo(inputUtente);
+
+console.log('Risposta: ', inputUtente);
+
+---------------------------------- */
+
+/*
 Pari e Dispari
 L’utente sceglie pari o dispari e inserisce un numero da 1 a 5.
 Generiamo un numero random (sempre da 1 a 5) per il computer (usando una funzione).
@@ -14,19 +28,26 @@ Consigli del giorno
 2. Scriviamo sempre solo un pezzetto di codice alla volta, se funziona allora andiamo avanti.
 */
 
-console.log('JS - OK!');
+const inputPariDispari = prompt('scegli PARI o DISPARI').toLowerCase();
+
+const inputNumero = parseInt(prompt('inserisci numero da 1 a 5')); console.log('Hai scelto: ', inputPariDispari, ' e ', inputNumero);
 
 
-let inputUtente = prompt('inserisci parola, per verificare se è palindroma'); console.log('inputUtente', inputUtente);
+const numeroRandom = Math.floor(Math.random() * 5 + 1); console.log('numero random: ', numeroRandom);
 
-inputUtente = controllarePalindromo(inputUtente);
+const sommaInputRandom = inputNumero + numeroRandom;
 
-console.log('Risposta: ', inputUtente);
-
+if (sommaInputRandom % 2 === 0) {
+    console.log('è pari');
+} else {
+    console.log('è DISpari');
+}
 
 
 
 /* ---------- FUNZIONI ---------- */
+
+// FUNZIONE ESERCIZIO 1 - PALINDROMO
 
 function controllarePalindromo(parolaInput) {
 
@@ -63,3 +84,8 @@ function controllarePalindromo(parolaInput) {
 
     return palindromaFlag;
 }
+
+// FUNZIONE ESERCIZIO 1 - PALINDROMO - //FINITO
+
+
+// FUNZIONE ESERCIZIO 2 - PARI O DISPARI
