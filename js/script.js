@@ -17,24 +17,30 @@ Consigli del giorno
 console.log('JS - OK!');
 
 
-const parolaInput = prompt('inserisci parola, per verificare se è palindroma');
+const parolaInput = prompt('inserisci parola, per verificare se è palindroma'); console.log('parolaInput', parolaInput);
 
-const mezzaLunghezzaParola = Math.floor(parolaInput.length / 2);
+const mezzaLunghezzaParola = Math.floor(parolaInput.length / 2); console.log('mezzaLunghezzaParola', mezzaLunghezzaParola);
 
-let reverseIndex = parolaInput.length - 1;
+let reverseIndex = parolaInput.length - 1; console.log('reverseIndex', reverseIndex);
+
+let palindromaFlag = true;
 
 for (let i = 0; i < mezzaLunghezzaParola; i++) {
+
+    console.log('ciclo for - indice', i);
+    console.log('ciclo for - reverse', reverseIndex);
 
     if (parolaInput[i] === parolaInput[reverseIndex]) {
         console.log('lettera uguale', i);
     } else {
         console.log('lettera diversa', i);
+        palindromaFlag = false;
     }
 
     reverseIndex--;
 
 }
-console.log('finito');
+console.log('ciclo for finito');
 
 
 /*
